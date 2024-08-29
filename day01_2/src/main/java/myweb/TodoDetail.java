@@ -1,21 +1,26 @@
 package myweb;
+
 import java.io.IOException;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/app")
-public class App extends HttpServlet {
+@WebServlet("/todo/detail")
+public class TodoDetail extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-		res.getWriter().append("Served at: ").append(req.getContextPath());
+		String path = "/WEB-INF/views/TodoDetail.jsp";
+		RequestDispatcher view = req.getRequestDispatcher(path);
+		view.forward(req, res);
 	}
 
-	protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-		doGet(req, res);
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		doGet(request, response);
 	}
 
 }
