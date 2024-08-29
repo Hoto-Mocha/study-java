@@ -28,7 +28,7 @@
 %>
 	<tr>
 		<td><%=todo.getNo() %></td>
-		<td><%=todo.getTitle() %></td>
+		<td><a href="detail?no=<%=todo.getNo() %>"><%=todo.getTitle() %></a></td>
 		<td><%=todo.isDone() %></td>
 		<td><a href="modify?no=<%=todo.getNo() %>">수정</a></td>
 		<td><a href="delete?no=<%=todo.getNo() %>">삭제</a></td>
